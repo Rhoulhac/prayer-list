@@ -4,3 +4,20 @@
   font-size: 1.5em;
   color: #2b2b2b;
 }
+
+.prayer-list-table {
+  border-collapse: collapse;
+
+    .prayer-list-header {
+      border: 1px solid #ddd;
+      background-color: paleturquoise;
+    }
+
+    .prayer-list-row {
+      border: 1px solid #ddd;
+    }
+}
+
+.prayer-list-header {
+  font-style: italic;
+}
