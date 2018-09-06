@@ -2,31 +2,33 @@ import React from 'react';
 import Header from './header';
 import Row from './row';
 
-export default function Table() {
-    const date1 = new Date();
-    const date2 = new Date();
-    const date3 = new Date();
+function getHeaderComponent(category, prayerList) {
+    category.map(headerEntry => prayerList.push(<Header category={headerEntry} key={headerEntry} />));
+}
 
-    date2.setDate(date1.getDate() - 1);
-    date3.setDate(date1.getDate() - 2);
+function getRowComponents(items, prayerList) {
+    items.map(rowEntry => prayerList.push(rowEntry.map(item =>
+        <Row item={item.item} date={item.date} key={`${item.item} - ${item.date}}`} />
+    )));
+}
 
+function getPrayerNeedsElements(need) {
+    const prayerList = [];
+    const category = Object.keys(need);
+    const items = Object.values(need);
+
+    getHeaderComponent(category, prayerList);
+    getRowComponents(items, prayerList);
+
+    return prayerList;
+}
+
+export default function Table({prayerNeeds}) {
     return (
         <div>
             <table className="prayer-list-table">
                 <tbody>
-                    <Header category="CATEGORY" />
-                    <Row
-                        item="ITEM a"
-                        date={date1.toLocaleDateString()}
-                    />
-                    <Row
-                        item="ITEM b"
-                        date={date2.toLocaleDateString()}
-                    />
-                    <Row
-                        item="ITEM c"
-                        date={date3.toLocaleDateString()}
-                    />
+                    {prayerNeeds.map(getPrayerNeedsElements)}
                 </tbody>
             </table>
         </div>
