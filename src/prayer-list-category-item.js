@@ -3,13 +3,22 @@ import Header from './header';
 import Row from './row';
 
 function getHeaderComponent(category, prayerList) {
-    category.map(headerEntry => prayerList.push(<Header category={headerEntry} key={headerEntry} />));
+    category.map(headerEntry => prayerList.push(
+        <Header
+            category={headerEntry}
+            key={headerEntry}
+        />
+    ));
 }
 
 function getRowComponents(items, prayerList) {
-    items.map(rowEntry => prayerList.push(rowEntry.map(item =>
-        <Row item={item.item} date={item.date} key={`${item.item} - ${item.date}}`} />
-    )));
+    items.map(rowEntry => prayerList.push(rowEntry.map(item => (
+        <Row
+            item={item.item}
+            date={item.date}
+            key={`${item.item} - ${item.date}`}
+        />
+    ))));
 }
 
 function getPrayerNeedsElements(need) {
@@ -23,15 +32,12 @@ function getPrayerNeedsElements(need) {
     return prayerList;
 }
 
-export default function Table({prayerNeeds}) {
+export default function Table({ prayerNeeds }) {
     return (
-        <div>
-            <table className="prayer-list-table">
-                <tbody>
-                    {prayerNeeds.map(getPrayerNeedsElements)}
-                </tbody>
-            </table>
-        </div>
+        <table className="prayer-list-table">
+            <tbody>
+                {prayerNeeds.map(getPrayerNeedsElements)}
+            </tbody>
+        </table>
     );
 }
-

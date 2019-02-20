@@ -2,6 +2,77 @@
 
 exports[`PrayerList should render component 1`] = `
 <div>
-  Prayer List!
+  <table
+    className="prayer-list-table"
+  >
+    <tbody>
+      <tr
+        className="prayer-list-header"
+      >
+        <th>
+          First CATEGORY
+        </th>
+      </tr>
+      <tr
+        className="prayer-list-row"
+      >
+        <td>
+          ITEM 1a
+          : 
+          2019-2-19
+        </td>
+      </tr>
+      <tr
+        className="prayer-list-row"
+      >
+        <td>
+          ITEM 1b
+          : 
+          2019-2-18
+        </td>
+      </tr>
+      <tr
+        className="prayer-list-row"
+      >
+        <td>
+          ITEM 1c
+          : 
+          2019-2-17
+        </td>
+      </tr>
+      <tr
+        className="prayer-list-header"
+      >
+        <th>
+          Second CATEGORY
+        </th>
+      </tr>
+      <tr
+        className="prayer-list-row"
+      >
+        <td>
+          ITEM 2a
+          : 
+          2019-2-18
+        </td>
+      </tr>
+      <tr
+        className="prayer-list-header"
+      >
+        <th>
+          Last CATEGORY
+        </th>
+      </tr>
+      <tr
+        className="prayer-list-row"
+      >
+        <td>
+          ITEM 3
+          : 
+          2019-2-13
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;

@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Row(props) {
     const {
-        item,
-        date
+        date,
+        item
     } = props;
 
     return (
